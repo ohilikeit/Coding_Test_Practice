@@ -1,27 +1,8 @@
-'''
-1 2 3 4
-2 2 3 4
-3 3 3 4
-4 4 4 4
-
-7 - 14 
-
-4 3 3 3 4 4 4 4
-n = 4
-array[a][b]  ~~~ array[c][d]
-array[1][3]  ~~~ array[3][2]
-
-1 2 3 
-2 2 3
-3 3 3
-n=3, 2, 5
-3 2 2 3
-'''
-
 def solution(n, left, right):
     a = left // n
-    c = right // n
     b = left % n 
+    
+    c = right // n
     d = right % n
     
     lst = []
