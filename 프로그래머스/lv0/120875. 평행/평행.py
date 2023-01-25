@@ -14,8 +14,5 @@ def solution(dots):
     if gd_1 == gd_2:
         return 1
     
-    
-    # elif dots[0][1] - gd_1*dots[0][0] == dots[1][1] - gd_2*dots[1][0]:
-    #     return 1
     return 0
 
