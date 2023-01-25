@@ -1,7 +1,3 @@
-import re 
-from collections import defaultdict
-
-
 def solution(record):
     answer = []
     id_list = {i.split()[1] : i.split()[2] for i in record if i.split()[0] != 'Leave'}
