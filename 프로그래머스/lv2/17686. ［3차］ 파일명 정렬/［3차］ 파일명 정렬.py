@@ -1,6 +1,5 @@
 import re
 
-
 def solution(file_names):
     filt = re.compile(r'([a-zA-Z\-\n\s.]+)([0-9]{0,5})(.*)')
     files = []
@@ -9,4 +8,3 @@ def solution(file_names):
     files.sort(key=lambda x: (x[0].lower(), int(x[1])))
     answer = [''.join(i) for i in files]
     return answer
-
