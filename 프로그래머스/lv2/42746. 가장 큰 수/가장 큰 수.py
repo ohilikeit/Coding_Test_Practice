@@ -7,6 +7,4 @@ def solution(numbers):
     for i in range(len(numbers)):
         answer += numbers[i][:len(numbers[i])//4]  
         
-    
-    
     return answer
