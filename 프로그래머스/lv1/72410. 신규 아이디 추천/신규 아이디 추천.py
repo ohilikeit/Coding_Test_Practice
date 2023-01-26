@@ -5,7 +5,7 @@ def solution(new_id):
     
     new_id = new_id.lower()
     
-    new_id = re.sub(r'[^a-z0-9-_.]', '', new_id)
+    new_id = re.sub(r'[^a-z0-9-_\.]', '', new_id)
     
     new_id = re.sub(r'\.{2,}', '.', new_id)
     
