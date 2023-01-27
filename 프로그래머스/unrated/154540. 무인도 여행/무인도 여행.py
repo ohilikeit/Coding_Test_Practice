@@ -18,7 +18,6 @@ def solution(maps):
                 q.append((a,b))
                 visited[a][b] = True
                 ans += int(maps[a][b])
-                print(ans, 'big')
                 while q:
                     x, y = q.popleft()
                     for i in range(4):
@@ -28,7 +27,6 @@ def solution(maps):
                             q.append((nx, ny))
                             visited[nx][ny] = True
                             ans += int(maps[nx][ny])
-                            print(ans, 'small')
                 answer.append(ans)
             
     return [-1] if not answer else sorted(answer)
