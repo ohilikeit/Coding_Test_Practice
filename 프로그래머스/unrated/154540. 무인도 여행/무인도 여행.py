@@ -7,6 +7,7 @@ def solution(maps):
     dy = [0, 1, 0, -1]
     visited = [[False] * m for _ in range(n)]
     
+    
     for i in range(n):
         for j in range(m):
             if maps[i][j] == 'X':
