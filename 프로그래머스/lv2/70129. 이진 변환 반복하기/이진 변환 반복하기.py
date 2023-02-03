@@ -6,8 +6,7 @@ def solution(s):
             break
         idx = s.count('1')
         cnt1 += len(s) - idx
-        s = "1" * idx
-        
+        s = "1" * idx        
         s = str(format(int(len(s)), 'b'))
         cnt2 += 1
         
