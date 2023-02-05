@@ -8,6 +8,7 @@ def solution(s):
             stack.pop()
         else:
             stack.append(i)
+            
     if len(stack) == 0:
         answer = 1
     
