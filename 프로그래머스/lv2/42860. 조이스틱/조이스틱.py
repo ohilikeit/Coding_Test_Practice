@@ -9,7 +9,6 @@ def solution(name):
         for n in [left_moved, right_moved[0]+right_moved[:0:-1]]:
             while n and n[-1] == 'A':
                 n = n[:-1]
-
             row_move = i + len(n)-1
             col_move = 0
             for c in map(ord, n):
