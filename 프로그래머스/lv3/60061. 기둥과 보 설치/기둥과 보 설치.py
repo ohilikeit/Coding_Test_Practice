@@ -12,6 +12,7 @@ def is_possible(answer):
             return False
     return True
                 
+    
 def solution(n, build_frame):
     answer = []
     for frame in build_frame:
