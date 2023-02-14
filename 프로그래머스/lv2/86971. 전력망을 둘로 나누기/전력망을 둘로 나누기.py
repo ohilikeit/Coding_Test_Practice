@@ -16,7 +16,6 @@ def union_parent(parent, a, b):
     
 def solution(n, wires):
     answer = int(1e9)
-    
     for i in wires:
         tmp = wires[:]
         tmp.remove(i)
