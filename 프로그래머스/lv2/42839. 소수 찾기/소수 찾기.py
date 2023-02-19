@@ -7,7 +7,6 @@ def solution(numbers):
         per += list(permutations(lst, i))
     total = [int(("").join(p)) for p in per]
     total = list(set(total))
-    
     answer = []
     for i in total:
         if i >= 2:
