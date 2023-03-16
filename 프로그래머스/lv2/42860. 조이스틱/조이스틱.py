@@ -3,7 +3,7 @@ def solution(name):
         return 0
 
     answer = float('inf')
-    for i in range(len(name) // 2): # 반 이상 움직일 필요 없음
+    for i in range(len(name) // 2): 
         left_moved = name[-i:]+name[:-i]
         right_moved = name[i:]+name[:i]
         for n in [left_moved, right_moved[0]+right_moved[:0:-1]]:
