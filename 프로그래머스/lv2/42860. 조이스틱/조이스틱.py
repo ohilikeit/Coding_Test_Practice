@@ -1,19 +1,24 @@
 def solution(name):
-    if set(name) == {'A'}:
-        return 0
+    answer = 0
+    
+    if set(list(name)) == {"A"}:
+        return answer
 
-    answer = float('inf')
-    for i in range(len(name) // 2): 
-        left_moved = name[-i:]+name[:-i]
-        right_moved = name[i:]+name[:i]
-        for n in [left_moved, right_moved[0]+right_moved[:0:-1]]:
-            while n and n[-1] == 'A':
-                n = n[:-1]
-            row_move = i + len(n)-1
-            col_move = 0
-            for c in map(ord, n):
-                col_move += min(c - 65, 91 - c)
+    # 상 하 이동
+    up_down = [min(ord(n) - ord("A"), ord("Z") - ord(n) + 1) for n in name]
+    answer += sum(up_down)
 
-            answer = min(answer, row_move + col_move)
+    # 좌 우 이동
+    left_right = len(name) - 1
 
-    return answer
+    for i, c in enumerate(name):
+        next_i = i + 1
+
+        while next_i < len(name) and name[next_i] == "A":
+            next_i += 1
+        
+        left_right = min(left_right, 
+                         len(name) - next_i + 2 * i, 
+                         2 * (len(name) - next_i) + i)
+    
+    return answer + left_right
