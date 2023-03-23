@@ -1,19 +1,17 @@
 from itertools import permutations
-
 def solution(k, dungeons):
-    answer = -1
-    a = list(permutations(dungeons, len(dungeons)))
-    for i in a:
-        idx = 0
-        new_k = k
-        for j in i:
-            a, b = j
-            if new_k >= a:
-                new_k -= b
-                idx += 1
-            else:
-                answer = max(answer, idx)
-                break
-            answer = max(answer, idx)
-    
-    return answer
+    counts = []
+    for dungeons in permutations(dungeons, len(dungeons)):
+        counts.append(adventure(k, dungeons))
+        
+    return max(counts)
+
+def adventure(k, dungeons):
+    count = 0
+    for dungeon in dungeons:
+        if dungeon[0] <= k:
+            count += 1
+            k -= dungeon[1]
+        else:
+            break
+    return count
