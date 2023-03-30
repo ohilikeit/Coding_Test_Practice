@@ -9,5 +9,4 @@ def solution(arr):
             else:
                 answer.append(i)
     
-    
     return answer
