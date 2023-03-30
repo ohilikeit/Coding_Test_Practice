@@ -8,7 +8,6 @@ def solution(priorities, location):
     answer = 0
     while len(q):
         j = q.popleft()
-        
         if q and max(q)[0] > j[0]:
             q.append(j)
         else:
