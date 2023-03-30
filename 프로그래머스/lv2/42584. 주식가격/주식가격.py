@@ -3,7 +3,6 @@ from collections import deque
 def solution(prices):
     answer = []
     q = deque(prices)
-    
     while q:
         idx = q.popleft()
         ans = 0
