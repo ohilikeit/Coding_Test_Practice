@@ -3,7 +3,7 @@ import heapq
 def solution(operations):
     q = []
     for i in operations:
-        order, num = i.split()[0], i.split()[1]
+        order, num = i.split()
         if order == 'I':
             heapq.heappush(q, int(num))
         else:
