@@ -10,9 +10,10 @@ def solution(operations):
             if not q:
                 continue
             if num == "1":
-                q.remove(heapq.nlargest(1, q)[0])
+                max_val = heapq.nlargest(1, q)[0]
+                q.remove(max_val)
+                heapq.heapify(q)
             else:
                 heapq.heappop(q)
     
-    return [heapq.nlargest(1, q)[0], q[0]] if q else [0,0]
-                
+    return [heapq.nlargest(1, q)[0], q[0]] if q else [0, 0]
