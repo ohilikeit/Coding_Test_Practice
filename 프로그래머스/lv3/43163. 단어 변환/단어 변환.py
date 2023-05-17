@@ -1,25 +1,25 @@
 from collections import deque
+
+def word_cnt(x, y):
+    cnt = 0
+    for i in range(len(x)):
+        if x[i] != y[i]:
+            cnt += 1
+    if cnt == 1:
+        return True
+    else:
+        return False
+
 def solution(begin, target, words):
-    bfs_stack = deque([(begin, 0)])
-    search_level = 0
-
-    while bfs_stack:
-        cur_word , search_level = bfs_stack.popleft()  
-        for word in words:
-            if one_difference(cur_word, word):
-                if word == target: return search_level + 1
-                bfs_stack.append((word, search_level+1))
-
-
     answer = 0
+    q = deque()
+    q.append((begin, 0))
+    while q:
+        idx, cnt = q.popleft()
+        for word in words:
+            if word_cnt(idx, word):
+                if word == target:
+                    return cnt + 1
+                q.append((word, cnt+1))
+    
     return answer
-
-
-
-
-def one_difference(word1, word2):
-    difference_times = 0
-    for char1, char2 in zip(word1,word2):
-        if char1 != char2:
-            difference_times += 1
-    return difference_times == 1 
