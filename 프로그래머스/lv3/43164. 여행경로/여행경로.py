@@ -2,6 +2,7 @@ def solution(tickets):
     graph = dict()
     for a, b in tickets:
         graph[a] = graph.get(a, []) + [b]
+    print(graph)
     for i in graph.keys():
         graph[i].sort(reverse=True)
     q = ['ICN']
