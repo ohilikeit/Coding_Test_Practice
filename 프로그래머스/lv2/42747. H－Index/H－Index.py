@@ -3,12 +3,12 @@ def solution(citations):
         return 0
     if len(citations) == 1:
         return 1
-    
     citations.sort(reverse=True)
     answer = len(citations)
-    for idx, num in enumerate(citations):
-        if idx >= num:
-            answer = idx
+    for i, num in enumerate(citations):
+        if i >= num:
+            answer = i
             break
-
+    
     return answer
+
