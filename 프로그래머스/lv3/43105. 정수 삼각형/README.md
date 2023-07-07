@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 14.4 MB, 시간: 60.82 ms
+메모리: 14.4 MB, 시간: 67.44 ms
 
 ### 구분
 
@@ -12,7 +12,7 @@
 
 ### 채점결과
 
-<br/>정확성: 64.3<br/>효율성: 35.7<br/>합계: 100.0 / 100.0
+Empty
 
 ### 문제 설명
 
@@ -42,7 +42,5 @@
 </tr>
 </tbody>
       </table>
-<p><a href="http://stats.ioinformatics.org/countries/SWE" target="_blank" rel="noopener">출처</a></p>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
