@@ -1,9 +1,9 @@
 from collections import deque
 
-def word_cnt(x, y):
+def is_diff_1(src, trg):
     cnt = 0
-    for i in range(len(x)):
-        if x[i] != y[i]:
+    for i in range(len(src)):
+        if src[i] != trg[i]:
             cnt += 1
     if cnt == 1:
         return True
@@ -17,9 +17,9 @@ def solution(begin, target, words):
     while q:
         idx, cnt = q.popleft()
         for word in words:
-            if word_cnt(idx, word):
+            if is_diff_1(idx, word):
                 if word == target:
                     return cnt + 1
-                q.append((word, cnt+1))
+                q.append((word, cnt + 1))
     
     return answer
