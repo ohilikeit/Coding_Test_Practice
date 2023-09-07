@@ -12,7 +12,7 @@ def union_parent(parent, a, b):
         parent[a] = b
     else:
         parent[b] = a
-        
+    
 def solution(n, computers):
     answer = 0
     parent = [i for i in range(n)]
@@ -21,7 +21,8 @@ def solution(n, computers):
             if computers[i][j] == 1:
                 if find_parent(parent, i) != find_parent(parent, j):
                     union_parent(parent, i, j)
-    lst = [find_parent(parent, i) for i in parent]
-    a = Counter(lst)
     
-    return len(a.values())
+    lst = [find_parent(parent, i) for i in parent]
+    
+    
+    return len(Counter(lst).values())
