@@ -1,7 +1,4 @@
-def gcd(a, b):
-    while b:
-        a, b = b, a % b
-    return a
+import math
 
 def solution(w, h):
-    return w * h - (w + h - gcd(w, h))
+    return w * h - (w + h - math.gcd(w, h))
