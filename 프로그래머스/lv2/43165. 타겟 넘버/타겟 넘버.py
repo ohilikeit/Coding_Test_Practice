@@ -15,4 +15,5 @@ def solution(numbers, target):
         else:
             if val == target:
                 answer += 1
+
     return answer
