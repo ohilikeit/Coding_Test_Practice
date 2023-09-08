@@ -8,5 +8,6 @@ def solution(routes):
         while q and end >= q[0][0]:
             q.popleft()
         answer += 1
-        
+    
+    
     return answer
