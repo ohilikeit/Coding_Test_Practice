@@ -7,4 +7,5 @@ def solution(number, k):
         stack.append(num)
     if k != 0:
         stack = stack[:-k]
+        
     return ''.join(stack)
