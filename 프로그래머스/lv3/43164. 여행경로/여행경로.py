@@ -1,18 +1,21 @@
+from collections import defaultdict
+
 def solution(tickets):
-    graph = dict()
-    for a, b in tickets:
-        graph[a] = graph.get(a, []) + [b]
-    print(graph)
+    answer = []
+    graph = defaultdict(list)
+    for st, en in tickets:
+        graph[st].append(en)
+    
     for i in graph.keys():
         graph[i].sort(reverse=True)
+    
     q = ['ICN']
-    answer = []
     while q:
-        top = q[-1]
-        if top not in graph or len(graph[top]) == 0:
-            answer.append(q.pop())
+        now = q[-1]
+        if now not in graph or len(graph[now]) == 0:
+            answer.append(q.pop(-1))
         else:
-            q.append(graph[top][-1])
-            graph[top] = graph[top][:-1]
-            
+            q.append(graph[now].pop())
+        
+    
     return answer[::-1]
