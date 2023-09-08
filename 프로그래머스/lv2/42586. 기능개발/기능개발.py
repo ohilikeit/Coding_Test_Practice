@@ -1,17 +1,19 @@
 from collections import Counter
+
 def solution(progresses, speeds):
-    answer = []
-    lst = []
-    n = len(progresses)
+    ans = []
+    n = len(speeds)
     for i in range(n):
         if (100 - progresses[i]) % speeds[i] == 0:
-            lst.append((100 - progresses[i]) // speeds[i])
+            tmp = (100 - progresses[i]) // speeds[i]
         else:
-            lst.append((100 - progresses[i]) // speeds[i] + 1)
-            
-    for i in range(n):
-        lst[i] = max(lst[:i+1])
-        
-    a = Counter(lst)
+            tmp = (100 - progresses[i]) // speeds[i] + 1
+        ans.append(tmp)
+    
+    for i in range(1, n):
+        if ans[i] < ans[i-1]:
+            ans[i] = ans[i-1]
+    
+    a = Counter(ans)
     
     return list(a.values())
