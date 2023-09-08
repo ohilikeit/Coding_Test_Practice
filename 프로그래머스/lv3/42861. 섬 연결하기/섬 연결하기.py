@@ -12,14 +12,13 @@ def union_parent(parent, a, b):
         parent[b] = a
 
 def solution(n, costs):
-    answer = 0
-    parent = [i for i in range(n)]
     costs.sort(key = lambda x: x[2])
-    
+    parent = [i for i in range(n)]
+    res = 0
     for i in costs:
         x, y, cost = i
         if find_parent(parent, x) != find_parent(parent, y):
             union_parent(parent, x, y)
-            answer += cost
-    
-    return answer
+            res += cost
+
+    return res
