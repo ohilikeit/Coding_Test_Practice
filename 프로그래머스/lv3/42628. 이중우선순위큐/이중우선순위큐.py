@@ -1,19 +1,27 @@
 import heapq
 
 def solution(operations):
-    q = []
-    for i in operations:
-        order, num = i.split()
-        if order == 'I':
-            heapq.heappush(q, int(num))
-        else:
-            if not q:
-                continue
-            if num == "1":
-                max_val = heapq.nlargest(1, q)[0]
-                q.remove(max_val)
-                heapq.heapify(q)
+    min_heap = []
+    max_heap = []
+
+    for operation in operations:
+        op, val = operation.split()
+        val = int(val)
+        
+        if op == 'I':
+            heapq.heappush(min_heap, val)
+            heapq.heappush(max_heap, -val)
+        elif op == 'D':
+            if val == 1:
+                if max_heap:
+                    max_val = -heapq.heappop(max_heap)
+                    min_heap.remove(max_val)
             else:
-                heapq.heappop(q)
+                if min_heap:
+                    min_val = heapq.heappop(min_heap)
+                    max_heap.remove(-min_val)
     
-    return [heapq.nlargest(1, q)[0], q[0]] if q else [0, 0]
+    if min_heap:
+        return [-heapq.heappop(max_heap), heapq.heappop(min_heap)]
+    else:
+        return [0, 0]
