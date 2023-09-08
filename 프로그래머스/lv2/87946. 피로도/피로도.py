@@ -1,8 +1,8 @@
 from itertools import permutations
 def solution(k, dungeons):
-    counts = []
+    counts = set()
     for dungeons in permutations(dungeons, len(dungeons)):
-        counts.append(adventure(k, dungeons))
+        counts.add(adventure(k, dungeons))
         
     return max(counts)
 
